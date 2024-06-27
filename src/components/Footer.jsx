@@ -1,5 +1,9 @@
 function Footer() {
-    return
+    return (
+        <footer>
+            <p>&copy; 2024 Matias Fazzito</p>
+        </footer>
+    )
 }
 
 export default Footer
