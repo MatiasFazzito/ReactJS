@@ -1,5 +1,11 @@
+import Producto from "./Producto";
+
 function Products() {
-    return
+    return(
+        <>
+            <Producto />
+        </>
+    )
 }
 
 export default Products
