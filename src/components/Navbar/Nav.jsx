@@ -1,6 +1,6 @@
 import CartWidget from "../CartWidget/Cartwidget"
 
-function Nav({cartCount}) {
+function Nav({ cartCount }) {
     return (
         <header>
             <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
@@ -23,7 +23,7 @@ function Nav({cartCount}) {
                                 </li>
                             </ul>
                             <form className="d-flex" role="search">
-                                <CartWidget cartCount={cartCount}/>
+                                <CartWidget cartCount={cartCount} />
                             </form>
                         </div>
                     </div>
