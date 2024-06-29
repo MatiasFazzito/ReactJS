@@ -3,7 +3,7 @@ import CartWidget from "../CartWidget/Cartwidget"
 function Nav({ cartCount }) {
     return (
         <header>
-            <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+            <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body align-items-center" data-bs-theme="dark">
                 <div className="container-fluid d-flex justify-content-between">
                     <a className="navbar-brand" href="#">Rocktica</a>
                     <div>
@@ -11,7 +11,7 @@ function Nav({ cartCount }) {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav">
+                            <ul className="navbar-nav d-flex align-items-center">
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">Home</a>
                                 </li>
@@ -21,10 +21,10 @@ function Nav({ cartCount }) {
                                 <li className="nav-item">
                                     <a className="nav-link active" aria-current="page" href="#">Eyewear</a>
                                 </li>
+                                <li className="nav-item">
+                                    <span className="nav-link" aria-current="page" href="#"><CartWidget cartCount={cartCount}/></span>
+                                </li>
                             </ul>
-                            <form className="d-flex" role="search">
-                                <CartWidget cartCount={cartCount} />
-                            </form>
                         </div>
                     </div>
                 </div>

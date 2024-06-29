@@ -5,12 +5,12 @@ import Footer from "./components/Footer/Footer"
 
 function App() {
 
-  const { cartCount, setCartCount } = useState(1)
+  const [cartCount, setCartCount ] = useState(5)
 
   return (
     <>
       <Nav cartCount={cartCount}/>
-      <Products/>
+      <Products greeting={"Productos destacados"}/>
       <Footer/>
     </>
   )
