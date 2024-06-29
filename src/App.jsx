@@ -9,9 +9,9 @@ function App() {
 
   return (
     <>
-      <Nav cartCount={cartCount} />
-      <Products />
-      <Footer />
+      <Nav cartCount={cartCount}/>
+      <Products/>
+      <Footer/>
     </>
   )
 }
