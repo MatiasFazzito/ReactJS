@@ -13,13 +13,13 @@ function Nav({ cartCount }) {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav d-flex align-items-center">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Home</a>
+                                    <a className="nav-link" href="#">Antejos de sol</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Nosotros</a>
+                                    <a className="nav-link" href="#">Anteojos de receta</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Eyewear</a>
+                                    <a className="nav-link active" aria-current="page" href="#">Productos destacados</a>
                                 </li>
                                 <li className="nav-item">
                                     <span className="nav-link" aria-current="page" href="#"><CartWidget cartCount={cartCount}/></span>
