@@ -3,7 +3,7 @@ import CartWidget from "../CartWidget/Cartwidget"
 function Nav({ cartCount }) {
     return (
         <header>
-            <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body align-items-center" data-bs-theme="dark">
+            <nav className="navbar navbar-expand-lg border-body align-items-center" data-bs-theme="dark">
                 <div className="container-fluid d-flex justify-content-between">
                     <a className="navbar-brand" href="#">Rocktica</a>
                     <div>
