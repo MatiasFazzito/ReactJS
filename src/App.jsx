@@ -15,10 +15,10 @@ function App() {
       <Nav cartCount={cartCount} />
       <Routes>
         <Route exact path="/" element={<ProductContainer greeting={"Bienvenidos a Rocktica"} />} />
-        <Route exact path="/category/:id" element={<ProductContainer />} />
-        <Route exact path="/item/:id" element={<DetailContainer />} />
+        <Route exact path="/category/:category" element={<ProductContainer />} />
+        <Route exact path="/detail/:id" element={<DetailContainer />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   )
 }

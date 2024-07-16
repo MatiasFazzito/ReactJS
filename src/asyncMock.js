@@ -6,7 +6,10 @@ const products = [
       category: "sol",
       img: "https://vulkeyewear.com/img/productos/6669e723e4db5c23183ecec59.jpg",
       stock: 100,
-      description: "Descripcion Discuss",
+      description: "Descubre los Discuss, disponibles en combinaciones de colores y lentes vanguardistas. Cada par está equipado con lentes de CR39 que ofrecen una buena protección solar.",
+      frente: "FRENTE ARMAZÓN DE ACETATO ITALIANO BIODEGRADABLE",
+      patilla: "PATILLA BISAGRAS DE ACERO INOXIDABLE",
+      lente: "LENTE CR39 / 100% PROTECCIÓN UVA Y UVB",
     },
     {
       id: "2",
