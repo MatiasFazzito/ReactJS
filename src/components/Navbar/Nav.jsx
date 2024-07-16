@@ -1,11 +1,12 @@
 import CartWidget from "../CartWidget/Cartwidget"
+import { Link } from "react-router-dom"
 
-function Nav({ cartCount }) {
+const Nav = ({ cartCount }) => {
     return (
         <header>
             <nav className="navbar navbar-expand-lg border-body align-items-center" data-bs-theme="dark">
                 <div className="container-fluid d-flex justify-content-between">
-                    <a className="navbar-brand" href="#">Rocktica</a>
+                    <Link className="navbar-brand" to="/">Rocktica</Link>
                     <div>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
@@ -13,16 +14,16 @@ function Nav({ cartCount }) {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav d-flex align-items-center">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Antejos de sol</a>
+                                    <Link className="nav-link" to="/category/sol">Antejos de sol</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Anteojos de receta</a>
+                                    <Link className="nav-link" to="/category/receta">Anteojos de receta</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Productos destacados</a>
+                                    <Link className="nav-link" to="/category/destacados">Productos destacados</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <span className="nav-link" aria-current="page" href="#"><CartWidget cartCount={cartCount}/></span>
+                                    <span className="nav-link" to="#"><CartWidget cartCount={cartCount} /></span>
                                 </li>
                             </ul>
                         </div>

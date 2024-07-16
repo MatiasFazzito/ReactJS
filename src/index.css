@@ -1,7 +1,8 @@
-@import url(./components/Navbar/Nav.css);
-@import url(./components/Products/Products.css);
+@import url(./components/Navbar/nav.css);
+@import url(./components/ProductContainer/productContainer.css);
+@import url(./components/ProductList/productList.css);
 @import url(./components/Product/product.css);
-@import url(./components/Footer/Footer.css);
+@import url(./components/Footer/footer.css);
 
 *{
     margin: 0;

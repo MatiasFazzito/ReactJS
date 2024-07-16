@@ -1,12 +1,12 @@
-function Product(props) {
-    return (
-        <div className="product">
-            <img src={props.imagen} alt={props.nombre}/>
-            <h2>{props.nombre}</h2>
-            <p>{props.precio}</p>
-            <button>Añadir al carrito</button>
-        </div>
-    )
+const Product = ({id, name, price, category, img, description}) => {
+  return (
+    <article className="product">
+        <h1 className="nombre">{name}</h1>
+        <img src={img} alt={name} />
+        <h2>{price}</h2>
+        <button>Añadir al carrito</button>
+    </article>
+  )
 }
 
 export default Product
