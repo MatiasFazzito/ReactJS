@@ -22,7 +22,8 @@
     font-size: 2rem;
     color: #333;
 }
-.detail .caracteristicas{
+
+.detail .caracteristicas {
     width: fit-content;
     text-align: left;
     font-weight: bold;

@@ -1,11 +1,11 @@
 import Product from "../Product/Product"
 
 
-const ProductList = ({products}) => {
+const ProductList = ({ products }) => {
     return (
         <div className="product-grid">
             {products.map(prod => {
-                return <Product key={prod.id} {...prod}/>
+                return <Product key={prod.id} {...prod} />
             })}
         </div>
     )

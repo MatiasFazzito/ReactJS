@@ -16,7 +16,7 @@ const ProductContainer = ({ greeting }) => {
             })
                 .catch((err) => console.log(err))
         } else {
-            getProductsByCategory(category).then((res) => {setProducts(res)}).catch((err) => console.log(err))
+            getProductsByCategory(category).then((res) => { setProducts(res) }).catch((err) => console.log(err))
         }
     }, [category])
     return (

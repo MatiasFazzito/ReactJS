@@ -6,7 +6,7 @@
 @import url(./components/DetailContainer/detailContainer.css);
 @import url(./components/Detail/detail.css);
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
