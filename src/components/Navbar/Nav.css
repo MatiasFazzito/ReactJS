@@ -1,8 +1,8 @@
-header nav{
-    background-color: rgb(24, 59, 90);
+header .navbar{
+    background-color: #183b5a;
 }
 
-header nav .navbar-brand {
+header .navbar .navbar-brand {
     font-family: "Cinzel", serif;
     font-size: 2rem;
     font-weight: bold;
