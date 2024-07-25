@@ -5,7 +5,7 @@ const products = [
     price: "$" + 76900,
     category: "sol",
     img: "https://vulkeyewear.com/img/productos/6669e723e4db5c23183ecec59.jpg",
-    stock: 100,
+    stock: 0,
     description: "Descubre los Discuss, disponibles en combinaciones de colores y lentes vanguardistas. Cada par está equipado con lentes de CR39 que ofrecen una buena protección solar con un peso de solo 29 gramos",
     frente: "FRENTE: ARMAZÓN DE ACETATO ITALIANO BIODEGRADABLE",
     patilla: "PATILLA: ACETATO ITALIANO CON BISAGRAS DE ACERO INOXIDABLE",

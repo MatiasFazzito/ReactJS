@@ -1,7 +1,7 @@
 import CartWidget from "../CartWidget/Cartwidget"
 import { Link } from "react-router-dom"
 
-const Nav = ({ cartCount }) => {
+const Nav = () => {
     return (
         <header>
             <nav className="navbar navbar-expand-lg border-body align-items-center" data-bs-theme="dark">
@@ -23,7 +23,7 @@ const Nav = ({ cartCount }) => {
                                     <Link className="nav-link" to="/category/destacados">Productos destacados</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <span className="nav-link" to="#"><CartWidget cartCount={cartCount} /></span>
+                                    <Link className="nav-link" to="/cart/"><CartWidget /></Link>
                                 </li>
                             </ul>
                         </div>

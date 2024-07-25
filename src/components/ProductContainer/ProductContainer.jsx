@@ -7,8 +7,6 @@ const ProductContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
     const { category } = useParams()
 
-
-
     useEffect(() => {
         if (!category) {
             getProducts().then((res) => {

@@ -5,6 +5,7 @@
 @import url(./components/Footer/footer.css);
 @import url(./components/DetailContainer/detailContainer.css);
 @import url(./components/Detail/detail.css);
+@import url(./components/ProductCounter/productCounter.css);
 
 * {
     margin: 0;

@@ -3,6 +3,9 @@
     padding: 5%;
     text-align: center;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product .nombre {
@@ -26,16 +29,4 @@
 .product p {
     font-size: 1em;
     color: #333;
-}
-
-.product button {
-    background-color: #333333;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.product button:hover {
-    background-color: #555555;
 }
