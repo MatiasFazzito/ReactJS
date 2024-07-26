@@ -17,7 +17,7 @@ const Product = ({ id, name, price, img, stock }) => {
       <Link to={`/detail/${id}`}><img src={img} alt={name} /></Link>
       <h2>{price}</h2>
       <h3>{disponible}</h3>
-      <ProductCounter stock={stock} />
+      <ProductCounter id={id} name={name} price={price} stock={stock} />
     </article>
   )
 }

@@ -4,17 +4,13 @@ import ProductContainer from "./components/ProductContainer/ProductContainer"
 import Footer from "./components/Footer/Footer"
 import DetailContainer from "./components/DetailContainer/DetailContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-//import { CartProvider } from "./context/CartContext";
-
-
+import { CartProvider } from "./context/CartContext";
 
 function App() {
 
-
-
   return (
     <BrowserRouter>
-      {/*<CartProvider>*/}
+      <CartProvider>
         <Nav />
         <Routes>
           <Route exact path="/" element={<ProductContainer greeting={"Bienvenidos a Rocktica"} />} />
@@ -23,7 +19,7 @@ function App() {
           <Route exact path="/cart/" element={<Cart />} />
         </Routes>
         <Footer />
-      {/*</CartProvider>*/}
+      </CartProvider>
     </BrowserRouter>
   )
 }

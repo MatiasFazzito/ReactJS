@@ -23,7 +23,7 @@ const Nav = () => {
                                     <Link className="nav-link" to="/category/destacados">Productos destacados</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/cart/"><CartWidget /></Link>
+                                    <Link className="nav-link cart" to="/cart/"><CartWidget /></Link>
                                 </li>
                             </ul>
                         </div>

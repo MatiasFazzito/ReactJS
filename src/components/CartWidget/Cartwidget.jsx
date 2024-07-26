@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
 import cart from "../../assets/cart.svg";
+import { useCart } from "../../hooks/CartHook";
 
-const CartWidget = ({ cartCount }) => {
+const CartWidget = () => {
+
+  const {totalQuantity} = useCart()
+
   return (
+    <>
       <img src={cart} />
+      <p className="widget">{totalQuantity}</p>
+    </>
   );
 }
 

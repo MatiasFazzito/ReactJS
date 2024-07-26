@@ -1,9 +1,16 @@
 import { useState } from "react"
+import { useCart } from "../../hooks/CartHook"
 
-const ProductCounter = ({ initialValue = 1, stock }) => {
+const ProductCounter = ({ initialValue = 1, id, name, price, stock }) => {
+  const [count, setCount] = useState(initialValue)
 
-  const addToCart = () => {
-    console.log("click")
+  const {addToCart} = useCart()
+
+  const handdleAdd = () => {
+    const productObj = {
+      id, name, price, quantity: count
+    }
+    addToCart(productObj)
   }
 
   const decrement = () => {
@@ -18,12 +25,10 @@ const ProductCounter = ({ initialValue = 1, stock }) => {
     }
   }
 
-  const [count, setCount] = useState(initialValue)
-
   return (
     <div className="counter">
       <button onClick={decrement}>-1</button>
-      <button onClick={addToCart}>Añadir al carrito {count}</button>
+      <button onClick={handdleAdd}>Añadir al carrito {count}</button>
       <button onClick={increment}>+1</button>
     </div>
   )

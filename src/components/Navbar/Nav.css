@@ -8,3 +8,9 @@ header .navbar .navbar-brand {
     font-weight: bold;
     font-style: normal;
 }
+
+header .navbar .cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
