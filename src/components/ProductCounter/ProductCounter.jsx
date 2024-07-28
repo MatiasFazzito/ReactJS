@@ -10,7 +10,9 @@ const ProductCounter = ({ initialValue = 1, id, name, price, stock }) => {
     const productObj = {
       id, name, price, quantity: count
     }
-    addToCart(productObj)
+    if (stock !== 0) {
+      addToCart(productObj)
+    }
   }
 
   const decrement = () => {

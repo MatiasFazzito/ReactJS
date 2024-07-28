@@ -5,11 +5,19 @@ import Detail from "../Detail/Detail"
 
 const DetailContainer = () => {
   const [product, setProduct] = useState()
+  const [loading, setLoading] = useState()
   const { id } = useParams()
 
   useEffect(() => {
-    getProductById(id).then((res) => (setProduct(res))).catch((err) => console.log(err))
+    setLoading(true)
+    getProductById(id).then((res) => (setProduct(res)))
+    .catch((err) => console.log(err))
+    .finally (() => setLoading(false))
   }, [id])
+
+  if (loading) {
+    return <h1 className="loading">Cargando productos...</h1>
+}
 
   return (
     <div className="details">

@@ -17,7 +17,7 @@ const CartContainer = () => {
             </div>
         )
     } else {
-        return <h1>Por favor agregue algun item al carrito</h1>
+        return <h1 className="emptyCart">Por favor agregue algun item al carrito</h1>
     }
 
 }

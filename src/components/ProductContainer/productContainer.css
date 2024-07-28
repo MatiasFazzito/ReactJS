@@ -16,3 +16,17 @@
         -1px 1px 0 #000,
         1px 1px 0 #000;
 }
+
+.loading {
+    margin-top: 15%;
+    background-color: #3333336c;
+    text-align: center;
+    color: orange;
+    font-weight: bold;
+    text-shadow:
+        3px 3px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
