@@ -8,7 +8,7 @@ const CartWidget = () => {
   return (
     <>
       <img src={cart} />
-      <p className="widget">{totalQuantity}</p>
+      <p>{totalQuantity}</p>
     </>
   );
 }

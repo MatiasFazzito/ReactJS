@@ -18,7 +18,7 @@ const ProductContainer = ({ greeting }) => {
         }
     }, [category])
     return (
-        <section className="products">
+        <section className="productContainer">
             <h1>{greeting}</h1>
             <div className="product-grid">
                 <ProductList products={products} />

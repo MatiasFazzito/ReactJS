@@ -1,9 +1,9 @@
-.products {
+.productContainer {
     padding: 2%;
-
+    margin-bottom: 3%;
 }
 
-.products h1 {
+.productContainer h1 {
     background-color: #3333336c;
     text-align: center;
     margin-bottom: 2%;

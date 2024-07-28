@@ -1,11 +1,11 @@
 .product {
-    border: 1px solid #dddddd;
     padding: 5%;
     text-align: center;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .product .nombre {

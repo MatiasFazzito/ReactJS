@@ -6,6 +6,8 @@
 @import url(./components/DetailContainer/detailContainer.css);
 @import url(./components/Detail/detail.css);
 @import url(./components/ProductCounter/productCounter.css);
+@import url(./components/CartContainer/cartContainer.css);
+@import url(./components/Cart/cart.css);
 
 * {
     margin: 0;

@@ -1,16 +1,17 @@
-.product.counter{
+.counter{
     display: flex;
 }
 
-.product .counter button {
+.counter button {
     background-color: #333333;
     color: #ffffff;
     border: none;
     padding: 10px 10px;
     cursor: pointer;
     max-width: fit-content;
+    resize: both;
 }
 
-.product .counter button:hover {
+.counter button:hover {
     background-color: #555555;
 }

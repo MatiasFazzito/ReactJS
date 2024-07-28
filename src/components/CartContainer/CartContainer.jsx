@@ -8,9 +8,13 @@ const CartContainer = () => {
 
     if (cartHasItems()) {
         return (
-            <>
+            <div className="cartContainer">
                 <Cart />
-            </>
+                <div className="cartFunction">
+                    <button className="cartBuy">Finalizar compra</button>
+                    <button className="cartErase">Limpiar carrito</button>
+                </div>
+            </div>
         )
     } else {
         return <h1>Por favor agregue algun item al carrito</h1>

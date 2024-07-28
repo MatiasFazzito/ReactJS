@@ -5,9 +5,9 @@ const Cart = () => {
     const {cart} =useCart()
 
     return (
-        <ul>
+        <ul className="cartList">
             {cart.map((item) => (
-                <li key={item.id}><p>{item.name}</p> <p>{item.price}</p> <p>{item.quantity}</p></li>
+                <li className="cartItem" key={item.id}><h5>{item.name}</h5> <h5>{item.price}</h5> <h5>{item.quantity}</h5></li>
             )
             )}
         </ul>

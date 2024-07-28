@@ -1,0 +1,15 @@
+.cartItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px black solid;
+    height: fit-content;
+    text-align: center;
+}
+
+.cartItem h5{
+    width: 30%;
+    padding: 0.5%;
+    margin: 0;
+}

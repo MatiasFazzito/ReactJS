@@ -1,0 +1,45 @@
+.cartContainer {
+    padding: 1%;
+    margin: 1%;
+    background-color: aliceblue;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+.cartContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.cartContainer .cartFunction {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cartContainer .cartFunction .cartBuy {
+    background-color: #154701;
+    color: #ffffff;
+    border: none;
+    padding: 1%;
+    cursor: pointer;
+    width: 30%;
+}
+
+.cartContainer .cartFunction .cartBuy:hover {
+    background-color: #376921;
+}
+
+.cartContainer .cartFunction .cartErase {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 1%;
+    cursor: pointer;
+    width: 30%;
+}
+
+.cartContainer .cartFunction .cartErase:hover {
+    background-color: #555555;
+}
