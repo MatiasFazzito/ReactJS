@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import ProductCounter from "../ProductCounter/ProductCounter"
 
 const Product = ({ id, name, price, img, stock }) => {
-
   const disponibilidad = () => {
     if (stock !== 0) {
       return "Disponible"

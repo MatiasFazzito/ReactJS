@@ -3,7 +3,6 @@ import { useCart } from "../../hooks/CartHook"
 
 const ProductCounter = ({ initialValue = 1, id, name, price, stock }) => {
   const [count, setCount] = useState(initialValue)
-
   const {addToCart} = useCart()
 
   const handdleAdd = () => {

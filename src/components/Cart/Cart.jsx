@@ -1,7 +1,6 @@
 import { useCart } from "../../hooks/CartHook"
 
 const Cart = () => {
-
     const {cart} =useCart()
 
     return (
