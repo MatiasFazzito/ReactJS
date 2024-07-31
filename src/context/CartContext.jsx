@@ -7,11 +7,14 @@ export const CartProvider = ({ children }) => {
     const isInCart = (id) => {
         return cart.some(prod => prod.id === id)
     }
+
     const addToCart = (product) => {
         if (!isInCart(product.id)) {
             setCart(prev => [...prev, product])
-        } else {
-
+        } else if (isInCart(product.id)) {
+            /*let acc = product.quantity
+            setCart(prev => [...prev, product])
+            cart.reduce(acc, product => acc + product.quantity)*/
         }
     }
 
@@ -25,6 +28,14 @@ export const CartProvider = ({ children }) => {
 
     const totalQuantity = total()
 
+    const totalValue = () =>{
+        let acc = 0
+        cart.forEach((el) =>{
+            acc+= el.quantity * el.price
+        })
+        return acc
+    }
+
     const cartHasItems = () => {
         if (cart.length !== 0) {
             return true
@@ -33,7 +44,7 @@ export const CartProvider = ({ children }) => {
         }
     }
 
-    const obj = { cart, isInCart, addToCart, totalQuantity, cartHasItems }
+    const obj = { cart, isInCart, addToCart, totalQuantity, cartHasItems, totalValue }
 
     return (
         <CartContext.Provider value={obj}>

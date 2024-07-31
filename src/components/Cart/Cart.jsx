@@ -1,15 +1,19 @@
 import { useCart } from "../../hooks/CartHook"
+import CartItem from "../CartItem/CartItem"
 
 const Cart = () => {
-    const {cart} =useCart()
+    const { cart, totalValue } = useCart()
+    const total = totalValue()
 
     return (
-        <ul className="cartList">
-            {cart.map((item) => (
-                <li className="cartItem" key={item.id}><h5>{item.name}</h5> <h5>{item.price}</h5> <h5>{item.quantity}</h5></li>
-            )
-            )}
-        </ul>
+        <>
+            <ul className="cartList">
+                {cart.map((item) => (
+                    <CartItem key={item.id} {...item} />
+                ))}
+            </ul>
+            <h3 className="cartTotal">Valor total del pedido: ${total}</h3>
+        </>
     )
 }
 

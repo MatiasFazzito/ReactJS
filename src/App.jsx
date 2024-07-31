@@ -5,6 +5,7 @@ import DetailContainer from "./components/DetailContainer/DetailContainer"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { CartProvider } from "./context/CartContext"
 import CartContainer from "./components/CartContainer/CartContainer"
+import Checkout from "./components/Checkout/Checkout"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/category/:category" element={<ProductContainer />} />
           <Route exact path="/detail/:id" element={<DetailContainer />} />
           <Route exact path="/cart/" element={<CartContainer />} />
+          <Route exact path="/cart/checkout/" element={<Checkout />} />
         </Routes>
         <Footer />
       </CartProvider>

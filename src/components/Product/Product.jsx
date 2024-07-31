@@ -14,7 +14,7 @@ const Product = ({ id, name, price, img, stock }) => {
     <article className="product">
       <h1 className="nombre">{name}</h1>
       <Link to={`/detail/${id}`}><img src={img} alt={name} /></Link>
-      <h2>{price}</h2>
+      <h2>${price}</h2>
       <h3>{disponible}</h3>
       <ProductCounter id={id} name={name} price={price} stock={stock} />
     </article>

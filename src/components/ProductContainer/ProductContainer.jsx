@@ -27,12 +27,14 @@ const ProductContainer = ({ greeting }) => {
     }
 
     return (
-        <section className="productContainer">
-            <h1>{greeting}</h1>
-            <div className="product-grid">
-                <ProductList products={products} />
-            </div>
-        </section>
+        <main>
+            <section className="productContainer">
+                <h1>{greeting}</h1>
+                <div>
+                    <ProductList products={products} />
+                </div>
+            </section>
+        </main>
     )
 }
 

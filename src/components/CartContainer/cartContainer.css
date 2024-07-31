@@ -2,7 +2,7 @@
     padding: 1%;
     margin: 1%;
     background-color: aliceblue;
-    height: 700px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -13,26 +13,31 @@
     display: none;
 }
 
-.cartContainer .cartFunction {
+.cartFunction {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin: 1%;
 }
 
-.cartContainer .cartFunction .cartBuy {
-    background-color: #154701;
-    color: #ffffff;
-    border: none;
-    padding: 1%;
-    cursor: pointer;
+.cartFunction .cartBuy{
     width: 30%;
 }
 
-.cartContainer .cartFunction .cartBuy:hover {
+.cartFunction .cartBuy button {
+    background-color: #154701;
+    color: #ffffff;
+    border: none;
+    padding: 3%;
+    cursor: pointer;
+    width: 100%;
+}
+
+.cartFunction .cartBuy button:hover {
     background-color: #376921;
 }
 
-.cartContainer .cartFunction .cartErase {
+.cartFunction .cartErase {
     background-color: #333333;
     color: #ffffff;
     border: none;
@@ -41,7 +46,7 @@
     width: 30%;
 }
 
-.cartContainer .cartFunction .cartErase:hover {
+.cartFunction .cartErase:hover {
     background-color: #555555;
 }
 

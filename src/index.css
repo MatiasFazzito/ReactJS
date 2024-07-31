@@ -8,6 +8,8 @@
 @import url(./components/ProductCounter/productCounter.css);
 @import url(./components/CartContainer/cartContainer.css);
 @import url(./components/Cart/cart.css);
+@import url(./components/CartItem/cartItem.css);
+@import url(./components/Checkout/checkout.css);
 
 * {
     margin: 0;
