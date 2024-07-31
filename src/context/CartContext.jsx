@@ -1,4 +1,5 @@
 import { createContext, useState } from "react"
+
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
@@ -18,7 +19,7 @@ export const CartProvider = ({ children }) => {
         }
     }
 
-    const total = () => {
+    const gettotalQuantity = () => {
         let acc = 0
         cart.forEach(prod => {
             acc += prod.quantity
@@ -26,7 +27,7 @@ export const CartProvider = ({ children }) => {
         return acc
     }
 
-    const totalQuantity = total()
+    const totalQuantity = gettotalQuantity()
 
     const totalValue = () =>{
         let acc = 0
