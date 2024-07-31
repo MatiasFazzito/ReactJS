@@ -20,13 +20,11 @@ const Checkout = () => {
                     email: "pepe@pepe",
                     deliver: "retira por local",
                 },
-                items: {
-                    cart,
+                items: cart,
                     totalQuantity,
                     total,
                     date: new Date()
                 }
-            }
             const ids = cart.map((item) => item.id)
 
             const productRef = collection(database, "productos")
