@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { useCart } from "../../hooks/CartHook"
+import { useNotification } from "../../hooks/NotificationHook"
 
 const ProductCounter = ({ initialValue = 1, id, name, price, stock }) => {
   const [count, setCount] = useState(initialValue)
   const {addToCart} = useCart()
+  const {setNotification} = useNotification()
 
   const handdleAdd = () => {
     const productObj = {
@@ -11,6 +13,7 @@ const ProductCounter = ({ initialValue = 1, id, name, price, stock }) => {
     }
     if (stock !== 0) {
       addToCart(productObj)
+      setNotification("success", `Se agregaron ${count} de ${name}`)
     }
   }
 

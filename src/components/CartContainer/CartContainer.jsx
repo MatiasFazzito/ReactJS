@@ -1,19 +1,14 @@
 import { useCart } from "../../hooks/CartHook"
 import Cart from "../Cart/Cart"
-import { Link } from "react-router-dom"
 
 const CartContainer = () => {
-    const { cartHasItems } = useCart()
+    const { cartHasItems, clearCart } = useCart()
 
     if (cartHasItems()) {
         return (
             <>
                 <div className="cartContainer">
                     <Cart />
-                </div>
-                <div className="cartFunction">
-                    <Link className="cartBuy" to="/cart/checkout"><button >Finalizar compra</button></Link>
-                    <button className="cartErase">Limpiar carrito</button>
                 </div>
             </>
         )

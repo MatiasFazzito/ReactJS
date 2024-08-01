@@ -49,7 +49,12 @@ export const CartProvider = ({ children }) => {
         setCart([])
     }
 
-    const obj = { cart, isInCart, addToCart, totalQuantity, cartHasItems, totalValue, clearCart }
+    const removeItem = (id) =>{
+        const cartUpdated = cart.filter((prod) => prod.id !== id)
+        setCart(cartUpdated)
+    }
+
+    const obj = { cart, isInCart, addToCart, totalQuantity, cartHasItems, totalValue, clearCart, removeItem }
 
     return (
         <CartContext.Provider value={obj}>

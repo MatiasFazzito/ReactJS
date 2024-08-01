@@ -55,20 +55,12 @@ const Checkout = () => {
                 setOrderCreated(true)
                 clearCart()
             } else {
-                console.log("No se pudo crear la orden")
+                console.log("La orden no pudo ser creada")
             }
         } catch (error) {
-            console.log("error")
+            console.log("")
         } finally {
             setLoading(false)
-        }
-
-        if (loading) {
-            return <h1>La orden esta siendo generada</h1>
-        }
-
-        if (orderCreated) {
-            return <h1>La orden fue creada correctamente</h1>
         }
     }
 

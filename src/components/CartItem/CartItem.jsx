@@ -1,7 +1,17 @@
+import { useCart } from "../../hooks/CartHook"
+import { useNotification } from "../../hooks/NotificationHook"
+
 const CartItem = (item) => {
+    const { removeItem } = useCart()
+    const {setNotification} = useNotification()
+    const handleRemove = (id)=>{
+        removeItem(id)
+        setNotification("warning", `Se elimino ${item.name}`)
+    }
+
     return (
         <li className="cartItem">
-            <h2>{item.name}</h2> <h3>Precio unitario: ${item.price}</h3> <h5>Cantidad: {item.quantity}</h5>
+            <h2>{item.name}</h2> <h3>Precio unitario: ${item.price}</h3> <h5>Cantidad: {item.quantity}</h5> <button className="itemEraser" onClick={()=> handleRemove(item.id)}>❌</button>
         </li>
     )
 }
