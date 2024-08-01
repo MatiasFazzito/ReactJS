@@ -6,41 +6,36 @@ import { database } from "../../services/firebase"
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
     const [orderCreated, setOrderCreated] = useState(false)
-    const { cart, totalQuantity, totalValue } = useCart()
+    const { cart, totalQuantity, totalValue, clearCart } = useCart()
     const total = totalValue()
 
-    const createOrder = async () => {
+    const createOrder = async (firstName, lastName, phoneNumber, email, deliver) => {
         setLoading(true)
         try {
             const objOrder = {
                 buyer: {
-                    firstName: "pepe",
-                    lastName: "pepe",
-                    phoneNumber: "123",
-                    email: "pepe@pepe",
-                    deliver: "retira por local",
+                    firstName: firstName,
+                    lastName: lastName,
+                    phoneNumber: phoneNumber,
+                    email: email,
+                    deliver: deliver,
                 },
                 items: cart,
-                    totalQuantity,
-                    total,
-                    date: new Date()
-                }
+                totalQuantity,
+                total,
+                date: new Date()
+            }
+
             const ids = cart.map((item) => item.id)
-
             const productRef = collection(database, "productos")
-
             const productsFirestore = await getDocs(query(productRef, where(documentId(), "in", ids)))
             const { docs } = productsFirestore
-
             const outOfStock = []
             const batch = writeBatch(database)
-
-            console.log(outOfStock);
 
             docs.forEach((doc) => {
                 const dataDoc = doc.data()
                 const stockDB = dataDoc.stock
-
                 const productInCart = cart.find((prod) => prod.id === doc.id)
                 const productQuantity = productInCart?.quantity
 
@@ -51,14 +46,14 @@ const Checkout = () => {
                 }
             })
 
-            if (outOfStock.lenght === 0) {
+            if (outOfStock.length === 0) {
                 await batch.commit()
-
                 const orderRef = collection(database, "orders")
                 const orderAdd = await addDoc(orderRef, objOrder)
                 console.log(`El id de su orden es ${orderAdd.id}`)
-                
+
                 setOrderCreated(true)
+                clearCart()
             } else {
                 console.log("No se pudo crear la orden")
             }
@@ -76,10 +71,23 @@ const Checkout = () => {
             return <h1>La orden fue creada correctamente</h1>
         }
     }
+
     return (
-        /*<div className="checkout">
+        <div className="checkout">
             <h1>Checkout</h1>
-            <form action="">
+            <form onSubmit={e => {
+                e.preventDefault()
+
+                const firstName = e.target.name.value
+                const lastName = e.target.lastName.value
+                const phoneNumber = e.target.phoneNumber.value
+                const email = e.target.email.value
+                const deliver = e.target.deliver.value
+
+                createOrder(firstName, lastName, phoneNumber, email, deliver)
+            }
+
+            }>
                 <fieldset>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Nombre</label>
@@ -102,8 +110,8 @@ const Checkout = () => {
                     <div className="mb-3">
                         <label htmlFor="deliver" className="form-label">Seleccione opcion de entrega</label>
                         <select className="form-select" aria-label="Default select example" id="deliver">
-                            <option defaultValue value="pickup">Retiro por el local</option>
-                            <option value="send">Envio a domicilio</option>
+                            <option>Retiro por el local</option>
+                            <option>Envio a domicilio</option>
                         </select>
                     </div>
                 </fieldset>
@@ -112,8 +120,7 @@ const Checkout = () => {
                     <button type="reset" className="btn clear">Limpiar</button>
                 </fieldset>
             </form>
-        </div>*/
-        <button type="submit" className="btn submit" onClick={createOrder}>Enviar</button>
+        </div>
     )
 }
 
