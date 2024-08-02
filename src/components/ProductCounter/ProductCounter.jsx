@@ -4,16 +4,19 @@ import { useNotification } from "../../hooks/NotificationHook"
 
 const ProductCounter = ({ initialValue = 1, id, name, price, stock }) => {
   const [count, setCount] = useState(initialValue)
-  const {addToCart} = useCart()
-  const {setNotification} = useNotification()
+  const { addToCart, isInCart } = useCart()
+  const { setNotification } = useNotification()
 
   const handdleAdd = () => {
     const productObj = {
       id, name, price, quantity: count
     }
-    if (stock !== 0) {
+
+    if (!isInCart(productObj.id) && (stock !== 0)) {
       addToCart(productObj)
       setNotification("success", `Se agregaron ${count} de ${name}`)
+    } else if (isInCart(productObj.id) || (stock === 0)) {
+      setNotification("danger", "El producto ya esta en el carrito o su stock fue agotado")
     }
   }
 

@@ -1,16 +1,14 @@
-import { useState } from "react"
 import { useCart } from "../../hooks/CartHook"
 import { addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore"
 import { database } from "../../services/firebase"
+import { useNotification } from "../../hooks/NotificationHook"
 
 const Checkout = () => {
-    const [loading, setLoading] = useState(false)
-    const [orderCreated, setOrderCreated] = useState(false)
     const { cart, totalQuantity, totalValue, clearCart } = useCart()
     const total = totalValue()
+    const { setNotification } = useNotification()
 
     const createOrder = async (firstName, lastName, phoneNumber, email, deliver) => {
-        setLoading(true)
         try {
             const objOrder = {
                 buyer: {
@@ -50,17 +48,13 @@ const Checkout = () => {
                 await batch.commit()
                 const orderRef = collection(database, "orders")
                 const orderAdd = await addDoc(orderRef, objOrder)
-                console.log(`El id de su orden es ${orderAdd.id}`)
-
-                setOrderCreated(true)
+                setNotification("success", `El id de su orden es ${orderAdd.id}`)
                 clearCart()
             } else {
-                console.log("La orden no pudo ser creada")
+                setNotification("danger", "La orden no pudo ser creada")
             }
         } catch (error) {
-            console.log("")
-        } finally {
-            setLoading(false)
+            setNotification("warning", "algo no salio bien")
         }
     }
 
@@ -83,19 +77,19 @@ const Checkout = () => {
                 <fieldset>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Nombre</label>
-                        <input type="text" className="form-control" id="name" required />
+                        <input type="text" className="form-control" id="name" required autoComplete="true" />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="lastName" className="form-label">Apellido</label>
-                        <input type="text" className="form-control" id="lastName" required />
+                        <input type="text" className="form-control" id="lastName" required autoComplete="true" />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="phoneNumber" className="form-label">Telefono</label>
-                        <input type="number" className="form-control" id="phoneNumber" required placeholder="(Cod. de área) Número" />
+                        <input type="number" className="form-control" id="phoneNumber" required placeholder="(Cod. de área) Número" autoComplete="true" />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Direccion de Email</label>
-                        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com" required />
+                        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com" required autoComplete="true" />
                     </div>
                 </fieldset>
                 <fieldset>

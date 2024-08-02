@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 const Cart = () => {
     const { cart, totalValue, clearCart } = useCart()
-    const {setNotification} = useNotification()
+    const { setNotification } = useNotification()
     const total = totalValue()
 
     const handleClear = (cart) => {
@@ -23,7 +23,7 @@ const Cart = () => {
             <h3 className="cartTotal">Valor total del pedido: ${total}</h3>
             <div className="cartFunction">
                 <Link className="cartBuy" to="/cart/checkout"><button >Finalizar compra</button></Link>
-                <button className="cartErase" onClick={()=> handleClear(cart)} >Limpiar carrito</button>
+                <button className="cartErase" onClick={() => handleClear(cart)} >Limpiar carrito</button>
             </div>
         </>
     )

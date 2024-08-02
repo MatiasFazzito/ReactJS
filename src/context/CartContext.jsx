@@ -12,11 +12,7 @@ export const CartProvider = ({ children }) => {
     const addToCart = (product) => {
         if (!isInCart(product.id)) {
             setCart(prev => [...prev, product])
-        } else if (isInCart(product.id)) {
-            /*let acc = product.quantity
-            setCart(prev => [...prev, product])
-            cart.reduce(acc, product => acc + product.quantity)*/
-        }
+        } 
     }
 
     const gettotalQuantity = () => {
@@ -29,10 +25,10 @@ export const CartProvider = ({ children }) => {
 
     const totalQuantity = gettotalQuantity()
 
-    const totalValue = () =>{
+    const totalValue = () => {
         let acc = 0
-        cart.forEach((el) =>{
-            acc+= el.quantity * el.price
+        cart.forEach((el) => {
+            acc += el.quantity * el.price
         })
         return acc
     }
@@ -45,11 +41,11 @@ export const CartProvider = ({ children }) => {
         }
     }
 
-    const clearCart= () => {
+    const clearCart = () => {
         setCart([])
     }
 
-    const removeItem = (id) =>{
+    const removeItem = (id) => {
         const cartUpdated = cart.filter((prod) => prod.id !== id)
         setCart(cartUpdated)
     }

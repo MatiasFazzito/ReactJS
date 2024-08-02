@@ -9,7 +9,7 @@ header .navbar .navbar-brand {
     font-style: normal;
 }
 
-header .navbar .cart{
+header .navbar .cart {
     display: flex;
     flex-direction: row;
     align-items: center;

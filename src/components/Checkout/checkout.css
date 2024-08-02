@@ -1,4 +1,4 @@
-.checkout{
+.checkout {
     background-color: #f0f8ff;
     padding: 2%;
     margin: 2%;
@@ -7,11 +7,11 @@
     justify-content: center;
 }
 
-.checkout h1{
+.checkout h1 {
     text-align: center;
 }
 
-.submit{
+.submit {
     background-color: #154701;
     color: #ffffff;
     border: none;
@@ -19,7 +19,7 @@
     margin: 1%;
 }
 
-.clear{
+.clear {
     background-color: #333333;
     color: #ffffff;
     border: none;

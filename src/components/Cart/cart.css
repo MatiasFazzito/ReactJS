@@ -1,11 +1,11 @@
-.cartlist{
+.cartlist {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-.cartTotal{
+.cartTotal {
     align-self: flex-end;
 }
 
@@ -16,7 +16,7 @@
     margin: 1%;
 }
 
-.cartFunction .cartBuy{
+.cartFunction .cartBuy {
     width: 30%;
 }
 

@@ -1,29 +1,20 @@
 import ProductList from "../ProductList/ProductList"
-import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { database } from "../../services/firebase"
-import { collection, getDocs, query, where } from "firebase/firestore"
+import { useNotification } from "../../hooks/NotificationHook"
+import { getProducts } from "../../services/firebase/firestore/productos"
+import { useAsync } from "../../hooks/useAsync"
 
 const ProductContainer = ({ greeting }) => {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState()
     const { category } = useParams()
-
-    useEffect(() => {
-        setLoading(true)
-        const collectionRef = category ? query(collection(database, "productos"), where("category", "==", category)) : collection(database, "productos")
-        getDocs(collectionRef).then((res) => {
-            const products = res.docs.map((doc) => {
-                return { id: doc.id, ...doc.data() }
-            })
-            setProducts(products)
-        })
-            .catch((err) => console.log(err))
-            .finally(() => setLoading(false))
-    }, [category])
+    const { setNotification } = useNotification()
+    const asyncFunction = () => getProducts(category)
+    const {data, loading, error} = useAsync(asyncFunction, [category])
 
     if (loading) {
         return <h1 className="loading">Cargando productos...</h1>
+    }
+    if (error) {
+        return setNotification("danger", "Error al cargar los productos")
     }
 
     return (
@@ -31,7 +22,7 @@ const ProductContainer = ({ greeting }) => {
             <section className="productContainer">
                 <h1>{greeting}</h1>
                 <div>
-                    <ProductList products={products} />
+                    <ProductList products={data} />
                 </div>
             </section>
         </main>

@@ -2,7 +2,7 @@ import cart from "../../assets/cart.svg"
 import { useCart } from "../../hooks/CartHook"
 
 const CartWidget = () => {
-  const {totalQuantity} = useCart()
+  const { totalQuantity } = useCart()
 
   return (
     <>
