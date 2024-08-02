@@ -2,7 +2,7 @@ import { useCart } from "../../hooks/CartHook"
 import Cart from "../Cart/Cart"
 
 const CartContainer = () => {
-    const { cartHasItems, clearCart } = useCart()
+    const { cartHasItems } = useCart()
 
     if (cartHasItems()) {
         return (

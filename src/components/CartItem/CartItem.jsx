@@ -4,6 +4,7 @@ import { useNotification } from "../../hooks/NotificationHook"
 const CartItem = (item) => {
     const { removeItem } = useCart()
     const { setNotification } = useNotification()
+    
     const handleRemove = (id) => {
         removeItem(id)
         setNotification("warning", `Se elimino ${item.name}`)
