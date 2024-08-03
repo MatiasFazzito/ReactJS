@@ -8,7 +8,7 @@ const ProductContainer = ({ greeting }) => {
     const { category } = useParams()
     const { setNotification } = useNotification()
     const asyncFunction = () => getProducts(category)
-    const {data, loading, error} = useAsync(asyncFunction, [category])
+    const { data, loading, error } = useAsync(asyncFunction, [category])
 
     if (loading) {
         return <h1 className="loading">Cargando productos...</h1>

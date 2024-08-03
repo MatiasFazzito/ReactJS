@@ -23,7 +23,6 @@ const Checkout = () => {
                 total,
                 date: new Date()
             }
-
             const ids = cart.map((item) => item.id)
             const productRef = collection(database, "productos")
             const productsFirestore = await getDocs(query(productRef, where(documentId(), "in", ids)))
@@ -71,9 +70,7 @@ const Checkout = () => {
                 const deliver = e.target.deliver.value
 
                 createOrder(firstName, lastName, phoneNumber, email, deliver)
-            }
-
-            }>
+            }}>
                 <fieldset>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Nombre</label>
