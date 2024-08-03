@@ -1,12 +1,10 @@
-### Rocktica
+# Rocktica
 
 - Es un proyecto del curso de ReactJS disctado por coderhouse
 - La idea principal del proyecto es presentar un ecommerce basado en el rubro que me desarrolle y trabajo actualmente que es la optica
 - Esta actualmente orientado a una marca especifica de anteojos con posibilidad de crecimiento y agregado de mas marcas y modelos
 
 # Contenidos
-
-[TOC]
 
 ## Aplicacion de HTML
 
