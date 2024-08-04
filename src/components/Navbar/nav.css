@@ -14,3 +14,9 @@ header .navbar .cart {
     flex-direction: row;
     align-items: center;
 }
+
+.navbarMenu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}

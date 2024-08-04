@@ -15,7 +15,7 @@ const Cart = () => {
 
     return (
         <>
-            <ul className="cartList">
+            <ul className="list-group list-group-flush">
                 {cart.map((item) => (
                     <CartItem key={item.id} {...item} />
                 ))}

@@ -6,7 +6,7 @@
     background-color: #ffffff;
 }
 
-.detail .nombre {
+.detail .name {
     background-color: #3333336c;
     margin-bottom: 20px;
     color: #ffffff;
@@ -18,13 +18,24 @@
     height: auto;
 }
 
-.detail h2 {
-    font-size: 2rem;
+.detail .description {
+    font-size: 1.5rem;
     color: #333;
 }
 
-.detail .caracteristicas {
+.detail .caracteristics {
     width: fit-content;
     text-align: left;
     font-weight: bold;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+    .detail .description{
+        font-size: 1rem;
+    }
+
+    .detail .caracteristics{
+        font-size: 0.75rem;
+    }
 }

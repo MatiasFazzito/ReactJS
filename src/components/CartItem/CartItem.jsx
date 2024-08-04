@@ -12,7 +12,11 @@ const CartItem = (item) => {
 
     return (
         <li className="cartItem">
-            <h2>{item.name}</h2> <h3>Precio unitario: ${item.price}</h3> <h5>Cantidad: {item.quantity}</h5>  <h3>Subtotal: $ {item.price * item.quantity}</h3><button className="itemEraser" onClick={() => handleRemove(item.id)}>❌</button>
+            <h2 className="name">{item.name}</h2>
+            <h3 className="unitaryPrice">Precio unitario: ${item.price}</h3>
+            <h3 className="quantity">Cantidad: {item.quantity}</h3>
+            <h3 className="subtotal">Subtotal: $ {item.price * item.quantity}</h3>
+            <button className="itemEraser" onClick={() => handleRemove(item.id)}>❌</button>
         </li>
     )
 }
