@@ -12,6 +12,9 @@ const Checkout = () => {
     const createOrder = async (buyer) => {
         try {
             const objOrder = { buyer: buyer, items: cart, totalQuantity, total, date: new Date() }
+
+            console.log(objOrder);
+            
             const ids = cart.map((item) => item.id)
             const productRef = collection(database, "productos")
             const productsFirestore = await getDocs(query(productRef, where(documentId(), "in", ids)))
@@ -45,7 +48,6 @@ const Checkout = () => {
         } catch (error) {
             setNotification("warning", "algo no salio bien")
             console.error(error);
-            
         }
     }
 
@@ -58,7 +60,7 @@ const Checkout = () => {
                 const buyer = {
                     firstName: e.target.name.value,
                     lastName: e.target.lastName.value,
-                    phoneNumber: e.target.phoneNumber.value,
+                    phoneNumber: Number(e.target.phoneNumber.value),
                     email: e.target.email.value,
                     adress: e.target.adress.value,
                 }
