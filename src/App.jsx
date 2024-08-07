@@ -7,22 +7,25 @@ import { CartProvider } from "./context/CartContext"
 import CartContainer from "./components/CartContainer/CartContainer"
 import Checkout from "./components/Checkout/Checkout"
 import { NotificationProvider } from "./context/NotificationContext"
+import { CheckoutProvider } from "./context/CheckoutContext"
 
 function App() {
   return (
     <BrowserRouter>
       <NotificationProvider>
-        <CartProvider>
-          <Nav />
-          <Routes>
-            <Route exact path="/" element={<ProductContainer greeting={"Bienvenidos a Rocktica"} />} />
-            <Route exact path="/category/:category" element={<ProductContainer />} />
-            <Route exact path="/detail/:id" element={<DetailContainer />} />
-            <Route exact path="/cart/" element={<CartContainer />} />
-            <Route exact path="/cart/checkout/" element={<Checkout />} />
-          </Routes>
-          <Footer />
-        </CartProvider>
+        <CheckoutProvider>
+          <CartProvider>
+            <Nav />
+            <Routes>
+              <Route exact path="/" element={<ProductContainer greeting={"Bienvenidos a Rocktica"} />} />
+              <Route exact path="/category/:category" element={<ProductContainer />} />
+              <Route exact path="/detail/:id" element={<DetailContainer />} />
+              <Route exact path="/cart/" element={<CartContainer />} />
+              <Route exact path="/cart/checkout/" element={<Checkout />} />
+            </Routes>
+            <Footer />
+          </CartProvider>
+        </CheckoutProvider>
       </NotificationProvider>
     </BrowserRouter>
   )

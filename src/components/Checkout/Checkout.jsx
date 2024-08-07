@@ -3,15 +3,17 @@ import { addDoc, collection, documentId, getDocs, query, where, writeBatch } fro
 import { database } from "../../services/firebase"
 import { useNotification } from "../../hooks/NotificationHook"
 import { Link } from "react-router-dom"
+import { useCheckout } from "../../hooks/CheckoutHook"
 
 const Checkout = () => {
     const { cart, totalQuantity, totalValue, clearCart } = useCart()
     const total = totalValue()
     const { setNotification } = useNotification()
+    const { formValues, handleInput, handleSubmition } = useCheckout()
 
-    const createOrder = async (buyer) => {
+    const createOrder = async () => {
         try {
-            const objOrder = { buyer: buyer, items: cart, totalQuantity, total, date: new Date() }
+            const objOrder = { buyer: formValues, items: cart, totalQuantity, total, date: new Date() }
             const ids = cart.map((item) => item.id)
             const productRef = collection(database, "productos")
             const productsFirestore = await getDocs(query(productRef, where(documentId(), "in", ids)))
@@ -50,39 +52,27 @@ const Checkout = () => {
     return (
         <div className="checkout">
             <h1>Checkout</h1>
-            <form onSubmit={e => {
-                e.preventDefault()
-
-                const buyer = {
-                    firstName: e.target.name.value,
-                    lastName: e.target.lastName.value,
-                    phoneNumber: Number(e.target.phoneNumber.value),
-                    email: e.target.email.value,
-                    adress: e.target.adress.value,
-                }
-
-                createOrder(buyer)
-            }}>
+            <form onSubmit={handleSubmition}>
                 <fieldset>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Nombre</label>
-                        <input type="text" className="form-control" id="name" autoComplete="true" required />
+                        <input type="text" className="form-control" id="name" name="name" autoComplete="true" value={formValues.name} required onChange={handleInput} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="lastName" className="form-label">Apellido</label>
-                        <input type="text" className="form-control" id="lastName" autoComplete="true" required />
+                        <input type="text" className="form-control" id="lastName" name="lastName" autoComplete="true" value={formValues.lastName} required onChange={handleInput} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="phoneNumber" className="form-label">Telefono</label>
-                        <input type="number" className="form-control" id="phoneNumber" placeholder="(Cod. de área) Número" autoComplete="true" required />
+                        <input type="number" className="form-control" id="phoneNumber" name="phoneNumber" placeholder="(Cod. de área) Número" autoComplete="true" value={formValues.phoneNumber} required onChange={handleInput} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Direccion de Email</label>
-                        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com" required autoComplete="true" />
+                        <input type="email" className="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com" autoComplete="true" value={formValues.email} required onChange={handleInput} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="adress" className="form-label">Direccion de entrega</label>
-                        <input type="text" className="form-control" id="adress" placeholder="Retiro en local o Direccion" autoComplete="true" required />
+                        <input type="text" className="form-control" id="adress" name="adress" placeholder="Retiro en local o Direccion" autoComplete="true" value={formValues.adress} required onChange={handleInput} />
                     </div>
                 </fieldset>
                 <fieldset className="text-center">
