@@ -139,8 +139,8 @@
 
 # Agradecimientos
 
-** Quiero extender mis agradecimientos a Adrian Gonzalez profesor del curso de ReactJS de Coderhouse por toda la enseñanza y consejos a la hora de codificar ademas de la informacion y enseñanzas extra no contempladas en el plan de estudios del curso **
+**Quiero extender mis agradecimientos a Adrian Gonzalez profesor del curso de ReactJS de Coderhouse por toda la enseñanza y consejos a la hora de codificar ademas de la informacion y enseñanzas extra no contempladas en el plan de estudios del curso**
 
-** Tambien quiero agradecer a los tutores Luis Mera y Esteban Hirzfeld por la ayuda, el aclarado de dudas y el acompañamiento durante la cursada ayudando no solo a mi sino a todos lso integrantes del curso a mejorar con consejos y datos de relevancia a la hora de codificar y formatear, ademas de aportar al igual que Adrian toda su experiencia en el rubro para nuestro desarrollo **
+**Tambien quiero agradecer a los tutores Luis Mera y Esteban Hirzfeld por la ayuda, el aclarado de dudas y el acompañamiento durante la cursada ayudando no solo a mi sino a todos lso integrantes del curso a mejorar con consejos y datos de relevancia a la hora de codificar y formatear, ademas de aportar al igual que Adrian toda su experiencia en el rubro para nuestro desarrollo**
 
 ### End
